@@ -3,62 +3,65 @@
 ## Aim
 
 To:
-1. Write a C++ program to display "Hello, World!" on the screen.
-2. Write a simple calculator program to perform basic arithmetic operations: addition, subtraction, multiplication, and division.
+1. To implement data types and understand storage classes in C++.
+2. To understand the scope of variables in different storage classes.
 
 ---
 
 ## Objectives
 
-- Understand the basic structure of a C++ program.
-- Learn to use `cin` and `cout` for input and output.
-- Learn to use the keyword 'using namespace'.
-- Perform arithmetic operations based on user input.
-- Use // to write comments to describe certain steps on a program.
+- Implement storage classes namely
+  (i) Auto
+  (ii) Extern
+  (iii) Register
+  (iv) Static
+- Understand the scope, storage and default value of each storage class.
+- Understand the size of each data type.
 
 ---
 
 ## Program Description
 
 ### ✅ Part 1: Syntax
-- We use the '#include' - the preprocessor directive to include the <iostream> headerfile.
-- 'iostream' is used so as to include cin, cout and endl in our program.
-- 'using namespace' is a keyword tells the compiler which namespace to use by default, so you don't have to keep typing the namespace prefix (like std::) in front of standard library names.
-- We call the main function next, it is the entry point of any program in C++. We generally used the datatype int along with main function.
-- 'int' is the return datatype of main. When the scope of function ends, it returns 0.
-- 'cin' is the input function while 'cout' is the output.
-- If, else are conditional statements that execute a set of insturctions under their scope.
-- If the condition is true, the code under if is executed, if false, the code under else part is executed. 
+- We define a function(user-defined) to differentiate the scope of variables.
+- We call the user-defined function `func` on the main function.
+- `sizeof` - a compile time operator is used to specify the memory alloted to each variable. 
 
-### ✅ Part 2: Hello World and Basic Calculator
-- Using 'cout' we print Hello World. To print the next sentence in a new line, we may use "\n" or endl.
-- We input 2 floats after defining 2 variables to hold values, using the cin function.
-- Along with the input variables, we also define sum,diff,prod,quot.
-- We can also use long float to increase the size of prod.
-- After assigning each variable an arithematic operation, we print them with cout.
+### ✅ Part 2: Auto
+ The auto storage class is the default storage class for all local variables.
+ Its default value is garbage value.
+{
+   int mount;
+   auto int month;
+}
+
+### ✅ Part 3: Extern
+ The extern storage class is used to give a reference of a global variable that is visible to ALL the program files. When you use 'extern' the variable cannot be initialized as all it does is point the variable name at a storage location that has been previously defined.
+ Its default value is garbage value.
+ Defining : extern int x;
+
+### ✅ Part 4: Static
+ The static storage class instructs the compiler to keep a local variable in existence during the life-time of the program instead of creating and destroying it each time it comes into and goes out of scope. Therefore, making local variables static allows them to maintain their values between function calls.
+ Its default value is 0.
+ Defining : static int x;
+
+### ✅ Part 5: Register
+The register storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can't have the unary '&' operator applied to it (as it does not have a memory location).
+Its default value is garbage value.
+{
+   register int  miles;
+}
+
 
 ---
 
 ## Concepts Used
 
-- Header files (`#include`)
-- Input/output streams (`cin`, `cout`)
-- Operators (`+`, `-`, `*`, `/`)
-- Datatypes(`float`,`long float`)
-- Conditional Statements(`if`,`else`)
+- Storage classes(`auto`,`static`,`register`,`extern`)
+- Memory allocated to datatypes(`sizeof`)
 
 ---
 
 ## Sample Output
 
-Hello World
-Enter num1 : 22
-Enter num_2 : 333
-Sum : 355
-Difference : -311
-Product : 7326
-Division : 0.0660661
 
-## Note
-
-While defining variables, we follow a naming convention, variable names can start only with alphabets. However we can use numbers and _ followed by it.
