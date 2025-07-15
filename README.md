@@ -58,5 +58,18 @@ To:
 ---
 
 ## Sample Output
+-STATIC
+Address of func variable a: 0x404194
+Size of variable: 4
+The variable is :1
 
+Address of func variable a: 0x404194
+Size of variable: 4
+The variable is :2
 
+Address of func variable a: 0x404194
+Size of variable: 4
+The variable is :3
+
+The variable is :5
+Address of global variable a: 0x404040
