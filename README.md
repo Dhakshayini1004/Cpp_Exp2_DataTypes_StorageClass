@@ -5,6 +5,7 @@
 To:
 1. To implement data types and understand storage classes in C++.
 2. To understand the scope of variables in different storage classes.
+3. To understand how many bytes are allocated to each datatype.
 
 ---
 
@@ -57,6 +58,17 @@ To:
 
 ---
 ### 🧪 Sample Output
+- Sizeof
+```
+Size of various datatypes
+Integer: 4
+Float: 4
+Boolean: 1
+Long Integer: 8
+Short Integer: 2
+Double: 8
+Character: 1
+```
 - STATIC 
 ```
 Address of func variable a : 0x404194
