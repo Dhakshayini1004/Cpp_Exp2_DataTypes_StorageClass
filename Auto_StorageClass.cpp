@@ -5,7 +5,7 @@ using namespace std;
 
 int a =5;
 void func(){
-    auto a = 3;
+    auto a = 4;
   // auto cannot be combined with a datatype specifier.
     cout<<"Address of func variable a: "<<&a<<endl;
     a++;
