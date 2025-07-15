@@ -6,6 +6,7 @@ using namespace std;
 int a =5;
 void func(){
     static int a;
+    // We utilise the default value 0. THe variable will hold the value irrespective of the number of function calls.
     cout<<"Address of func variable a: "<<&a<<endl;
     a++;
     cout<<"Size of variable: "<<sizeof(a)<<endl;
