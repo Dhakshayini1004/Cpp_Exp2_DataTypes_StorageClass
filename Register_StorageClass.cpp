@@ -22,3 +22,16 @@ int main(){
     cout << "Address of global variable a: " << &a;
     return 0;
 }
+/* Sample Output
+Size of variable: 4
+The variable is :1
+
+Size of variable: 4
+The variable is :1
+
+Size of variable: 4
+The variable is :1
+
+The variable is :5
+Address of global variable a: 0x404040
+    */
