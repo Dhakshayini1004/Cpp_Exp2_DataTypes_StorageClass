@@ -22,3 +22,19 @@ int main(){
     cout<<"Address of global variable a: "<<&a;
     return 0;
 }
+/* Sample Output
+Address of func variable a: 0x404040
+Size of variable: 4
+The variable is :6
+
+Address of func variable a: 0x404040
+Size of variable: 4
+The variable is :7
+
+Address of func variable a: 0x404040
+Size of variable: 4
+The variable is :8
+
+The variable is :8
+Address of global variable a: 0x404040 
+*/
