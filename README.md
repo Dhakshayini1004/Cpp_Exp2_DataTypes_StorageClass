@@ -1,68 +1,148 @@
-# C++ Experiment 2: To study and implement data types and storage classes.
-
-## Aim
-
-To:
-1. To implement data types and understand storage classes in C++.
-2. To understand the scope of variables in different storage classes.
-3. To understand how many bytes are allocated to each datatype.
+# Experiment 2: Study of Data Types and Storage Classes in C++
 
 ---
 
-## Tools used 
-VS Code
+## Aim
+
+To study and implement various data types and storage classes in C++, analyze their memory usage, scope, and lifetime using programs, and understand their significance in structured programming.
+
+---
+
+## Tools Used
+Visual Studio Code (VS Code)
 
 ---
 
 ## Objectives
 
-- Implement storage classes namely
-  (i) Auto
-  (ii) Extern
-  (iii) Register
-  (iv) Static
-- Understand the scope, storage and default value of each storage class.
-- Understand the size of each data type.
+- To learn the classification of data types in C++.
+- To understand and implement the four main storage classes: `auto`, `register`, `static`, and `extern`.
+- To explore the behavior of storage classes across multiple function calls.
+- To determine memory size for various data types using the `sizeof()` operator.
 
 ---
 
-## Program Description
+## THEORY
 
-### ✅ Part 1: Syntax
-- We define a function(user-defined) to differentiate the scope of variables.
-- We call the user-defined function `func` on the main function.
-- `sizeof` - a compile time operator is used to specify the memory alloted to each variable. 
+### DATA TYPES IN C++
 
-### ✅ Part 2: Auto
- - The auto storage class is the default storage class for all local variables.
- - Its default value is garbage value.
- - Defining : auto int x;
+Data types specify the type of data that a variable can hold. C++ supports various types of data grouped as:
 
+#### ➤ Primitive/Built-in Data Types:
+| Data Type | Description               | Example           |
+|-----------|---------------------------|-------------------|
+| `int`     | Integer numbers           | `int a = 5;`      |
+| `float`   | Single-precision decimal  | `float pi = 3.14;`|
+| `double`  | Double-precision decimal  | `double g = 9.81;`|
+| `char`    | Single character          | `char ch = 'A';`  |
+| `bool`    | Boolean values            |`bool flag = true;`|
+| `short`   | Shorter-range integer     | `short s = 1000;` |
+| `long`    | Larger-range integer      | `long l = 123456;`|
 
-### ✅ Part 3: Extern 
- - The extern storage class is used to give a reference of a global variable that is visible to ALL the program files. When you use 'extern' the variable cannot be initialized as all it does is point the variable name at a storage location that has been previously defined.
- - Its default value is garbage value.
- - Defining : extern int x;
+#### ➤ Derived Data Types:
+- Arrays, Functions, Pointers, References
 
-### ✅ Part 4: Static
- - The static storage class instructs the compiler to keep a local variable in existence during the life-time of the program instead of creating and destroying it each time it comes into and goes out of scope. Therefore, making local variables static allows them to maintain their values between function calls.
- - Its default value is 0.
- - Defining : static int x;
+#### ➤ User-defined Types:
+- `struct`, `union`, `enum`, `class`
 
-### ✅ Part 5: Register
- - The register storage class is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size (usually one word) and can't have the unary '&' operator applied to it (as it does not have a memory location).
- - Its default value is garbage value.
- - Defining : register int x;
+#### ➤ Void:
+- Used for functions that do not return a value.
+
+#### ➤ `sizeof()` Operator:
+Used to determine the memory (in bytes) occupied by a variable or data type.
+```cpp
+cout << "Size of int: " << sizeof(int) << " bytes" << endl;
+```
+
+---
+
+### STORAGE CLASSES IN C++
+
+Storage classes in C++ define the **scope**, **visibility**, **lifetime**, and **default initial value** of variables. There are four major storage classes:
 
 ---
 
-## Concepts Used
+#### 1. `auto`
 
-- Storage classes(`auto`,`static`,`register`,`extern`)
-- Memory allocated to datatypes(`sizeof`)
+- **Scope**: Local to the block
+- **Lifetime**: Until block execution ends
+- **Default Value**: Garbage (uninitialized)
+- **Storage Location**: Memory
+- **Note**: `auto` is redundant in modern C++ unless used with type deduction (`auto x = 5;`).
+
+```cpp
+void func() {
+    auto int a = 10;
+    cout << a;
+}
+```
 
 ---
-### 🧪 Sample Output
+
+#### 2. `register`
+
+- **Scope**: Local
+- **Lifetime**: Till block ends
+- **Default Value**: Garbage
+- **Storage Location**: CPU Register (if available)
+- **Note**: Address-of operator `&` **cannot** be used on `register` variables.
+
+```cpp
+void fastLoop() {
+    register int i;
+    for(i = 0; i < 10; i++) {
+        cout << i << " ";
+    }
+}
+```
+
+---
+
+#### 3. `static`
+
+- **Scope**: Local to the block
+- **Lifetime**: Entire program execution
+- **Default Value**: Zero
+- **Storage Location**: Static memory
+- **Use**: Retains value between multiple function calls.
+
+```cpp
+void counter() {
+    static int count = 0;
+    count++;
+    cout << count << endl;
+}
+```
+
+---
+
+#### 4. `extern`
+
+- **Scope**: Global (across files)
+- **Lifetime**: Entire program
+- **Default Value**: Zero
+- **Storage Location**: Global memory
+- **Use**: Used to access a global variable declared in another file.
+
+```cpp
+extern int globalVar;
+void show() {
+    cout << globalVar;
+}
+```
+
+---
+
+## Execution Steps
+
+1. Declare variables using each storage class.
+2. Use `sizeof()` to display memory consumption of different data types.
+3. Use function calls to demonstrate the lifetime and scope of `static`, `auto`, `register`, and `extern` variables.
+4. Run the program and observe the outputs for multiple invocations of the function.
+
+---
+
+### Sample Output
 - Sizeof
 ```
 Size of various datatypes
